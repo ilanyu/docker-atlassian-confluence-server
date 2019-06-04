@@ -23,6 +23,7 @@ RUN apk add --no-cache ca-certificates wget curl openssh bash procps openssl per
 
 COPY entrypoint.sh              /entrypoint.sh
 COPY confluenceCrack.jar        ${CONFLUENCE_INSTALL_DIR}/confluenceCrack.jar
+COPY mysql-connector-java-5.1.42.jar        ${CONFLUENCE_INSTALL_DIR}/confluence/WEB-INF/lib/mysql-connector-java-5.1.42.jar
 
 RUN chmod a+x /entrypoint.sh \
     && chmod a+x ${CONFLUENCE_INSTALL_DIR}/confluenceCrack.jar
